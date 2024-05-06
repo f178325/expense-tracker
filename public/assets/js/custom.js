@@ -1,6 +1,6 @@
 function ajaxCall(h, formData, successCallBack = false, btn = false, method = 'POST') {
     if (btn !== false) {
-        btn.data('html', btn.html()).html('Processing...').prop("disabled", true);
+        btn.prop("disabled", true);
     }
     let ajaxRequest;
     if (formData instanceof FormData) {
@@ -36,7 +36,7 @@ function ajaxCall(h, formData, successCallBack = false, btn = false, method = 'P
         .fail(ajaxError)
         .always(function () {
             if (btn !== false) {
-                btn.html(btn.data('html')).prop("disabled", false);
+                btn.prop("disabled", false);
             }
         });
 }

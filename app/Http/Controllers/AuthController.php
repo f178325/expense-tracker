@@ -46,4 +46,38 @@ class AuthController extends Controller
             ], 422);
         }
     }
+
+    public function getRegister()
+    {
+        if (auth()->check()) {
+            return redirect()->route('get.index');
+        }
+        return view('auth.register');
+    }
+
+    public function postRegister(Request $request)
+    {
+        try {
+            $validatedData = $request->validate([
+                'name' => 'required',
+                'email' => 'required|email|unique:users',
+                'password' => 'required'
+            ]);
+            $user = User::query()->create([
+                'name' => $validatedData['name'],
+                'email' => $validatedData['email'],
+                'password' => $validatedData['password'],
+            ]);
+            auth()->login($user);
+            return response()->json([
+                'success' => true,
+                'message' => 'Registration successful'
+            ]);
+        } catch (ValidationException $e) {
+            return response()->json([
+                'success' => false,
+                'message' => $e->getMessage()
+            ], 422);
+        }
+    }
 }
