@@ -37,7 +37,11 @@
                                     <ul>
                                         <li><a href="#"><i class="fi fi-brands-facebook"></i></a></li>
                                         <li><a href="#"><i class="fi fi-brands-twitter-alt"></i></a></li>
-                                        <li><a href="#"><i class="fi fi-brands-linkedin"></i></a></li>
+                                        <li>
+                                            <a href="https://www.linkedin.com/in/muhammad-ibrahim-butt/" target="_blank">
+                                                <i class="fi fi-brands-linkedin"></i>
+                                            </a>
+                                        </li>
                                         <li><a href="#"><i class="fi fi-brands-pinterest"></i></a></li>
                                     </ul>
                                 </div>
