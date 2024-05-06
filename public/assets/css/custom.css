@@ -1,0 +1,3 @@
+.parsley-errors-list li {
+    color: rgba(var(--bs-danger-rgb), 1) !important;
+}
