@@ -78,18 +78,22 @@
                         </div>
                         <div class="dropdown profile_log dropdown">
                             <div data-bs-toggle="dropdown">
-                                <div class="user icon-menu active"><span><i class="fi fi-rr-user"></i></span></div>
+                                <div class="user icon-menu active">
+                                    <span><i class="fi fi-rr-user"></i></span>
+                                </div>
                             </div>
                             <div tabindex="-1" role="menu" aria-hidden="true"
                                  class="dropdown-menu dropdown-menu dropdown-menu-end">
                                 <div class="user-email">
                                     <div class="user">
-                                            <span class="thumb"><img class="rounded-full"
-                                                                     src="{{ asset('assets') }}/images/avatar/3.jpg"
-                                                                     alt=""></span>
+                                            <span class="thumb">
+                                                <img class="rounded-full"
+                                                     src="{{ asset('assets') }}/images/avatar/3.jpg"
+                                                     alt="">
+                                            </span>
                                         <div class="user-info">
-                                            <h5>Hafsa Humaira</h5>
-                                            <span>hello@email.com</span>
+                                            <h5>{{ auth()->user()->name }}</h5>
+                                            <span>{{ auth()->user()->email }}</span>
                                         </div>
                                     </div>
                                 </div>
@@ -105,10 +109,10 @@
                                     <span><i class="fi fi-rr-settings"></i></span>
                                     Settings
                                 </a>
-                                <a class="dropdown-item logout" href="signin.html">
+                                <button id="btn-logout" class="dropdown-item logout">
                                     <span><i class="fi fi-bs-sign-out-alt"></i></span>
                                     Logout
-                                </a>
+                                </button>
                             </div>
                         </div>
                     </div>

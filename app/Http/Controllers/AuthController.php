@@ -61,7 +61,7 @@ class AuthController extends Controller
             $validatedData = $request->validate([
                 'name' => 'required',
                 'email' => 'required|email|unique:users',
-                'password' => 'required'
+                'password' => 'required|min:8'
             ]);
             $user = User::query()->create([
                 'name' => $validatedData['name'],
@@ -79,5 +79,13 @@ class AuthController extends Controller
                 'message' => $e->getMessage()
             ], 422);
         }
+    }
+
+    public function postLogout()
+    {
+        auth()->logout();
+        return response()->json([
+            'success' => true
+        ]);
     }
 }

@@ -53,16 +53,17 @@
                         <div class="auth-form">
                             <h4>Sign Up</h4>
                             <form id="pageForm" autocomplete="off">
+                                @csrf
                                 <div class="row">
                                     <div class="col-12 mb-3">
                                         <label class="form-label">Full Name</label>
-                                        <input name="name" type="text" class="form-control"/>
+                                        <input name="name" type="text" class="form-control" required/>
                                     </div>
                                     <div class="col-12 mb-3"><label class="form-label">Email</label>
-                                        <input name="email" type="email" class="form-control"/>
+                                        <input name="email" type="email" class="form-control" required/>
                                     </div>
                                     <div class="col-12 mb-3"><label class="form-label">Password</label>
-                                        <input name="password" type="password" class="form-control"/>
+                                        <input name="password" type="password" class="form-control" minlength="8" required/>
                                     </div>
                                 </div>
                                 <div class="mt-3 d-grid gap-2">
@@ -87,7 +88,7 @@
 <script src="{{ asset('assets') }}/js/custom.js"></script>
 <script>
     $('#pageForm').parsley().on('form:submit', function (formInstance) {
-        ajaxCall('{{ route('post.login') }}', formInstance.$element.serialize(), function (response) {
+        ajaxCall('{{ route('post.register') }}', formInstance.$element.serialize(), function (response) {
             if (response.success) {
                 redirectTo('{{ route('get.index') }}');
             }
