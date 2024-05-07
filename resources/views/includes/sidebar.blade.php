@@ -38,10 +38,10 @@
                 </a>
             </li>
             <li>
-                <a href="profile.html">
-                            <span>
-                                <i class="fi fi-rr-user"></i>
-                            </span>
+                <a href="{{ route('get.profile') }}">
+                    <span>
+                        <i class="fi fi-rr-user"></i>
+                    </span>
                     <span class="nav-text">Profile</span>
                 </a>
             </li>

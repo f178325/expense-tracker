@@ -25,5 +25,6 @@
     @include('includes.footer')
 </div>
 @include('includes.script')
+@yield('page-js')
 </body>
 </html>

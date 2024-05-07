@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::middleware('auth')->group(function () {
     Route::view('/', 'index')->name('get.index');
+    Route::view('/profile', 'profile')->name('get.profile');
 });
 
 Route::controller(AuthController::class)->group(function () {
