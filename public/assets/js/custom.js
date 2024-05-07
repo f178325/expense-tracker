@@ -65,7 +65,7 @@ function alertMessage(message, success) {
     }
 }
 
-function ajaxError(jqXHR) {
+function ajaxError(jqXHR, textStatus) {
     let M = '';
     if (jqXHR.status === 0) {
         M = 'Unable to connect to the server';

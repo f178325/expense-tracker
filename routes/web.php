@@ -1,12 +1,15 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\WalletController;
 use Illuminate\Support\Facades\Route;
 
 
 Route::middleware('auth')->group(function () {
     Route::view('/', 'index')->name('get.index');
     Route::view('/profile', 'profile')->name('get.profile');
+
+    Route::resource('wallets', WalletController::class);
 });
 
 Route::controller(AuthController::class)->group(function () {

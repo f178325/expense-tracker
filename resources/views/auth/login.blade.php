@@ -90,8 +90,8 @@
 <script src="{{ asset('assets') }}/vendor/jquery/jquery.min.js"></script>
 <script src="{{ asset('assets') }}/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 <script src="{{ asset('assets') }}/vendor/toastr/toastr.min.js"></script>
-<script src="{{ asset('assets') }}/js/scripts.js"></script>
 <script src="{{ asset('assets') }}/js/plugins/parsley.min.js"></script>
+<script src="{{ asset('assets') }}/js/scripts.js"></script>
 <script src="{{ asset('assets') }}/js/custom.js"></script>
 <script>
     $('#pageForm').parsley().on('form:submit', function (formInstance) {

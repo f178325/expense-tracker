@@ -14,10 +14,10 @@
                 </a>
             </li>
             <li>
-                <a href="wallets.html">
-                            <span>
-                                <i class="fi fi-rr-wallet"></i>
-                            </span>
+                <a href="{{ route('wallets.index') }}">
+                    <span>
+                        <i class="fi fi-rr-wallet"></i>
+                    </span>
                     <span class="nav-text">Wallets</span>
                 </a>
             </li>

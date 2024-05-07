@@ -1,5 +1,6 @@
 <script src="{{ asset('assets') }}/vendor/jquery/jquery.min.js"></script>
 <script src="{{ asset('assets') }}/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="{{ asset('assets') }}/js/plugins/parsley.min.js"></script>
 <script src="{{ asset('assets') }}/vendor/toastr/toastr.min.js"></script>
 <script src="{{ asset('assets') }}/vendor/circle-progress/circle-progress.min.js"></script>
 <script src="{{ asset('assets') }}/vendor/circle-progress/circle-progress-init.js"></script>
