@@ -8,20 +8,24 @@
                             <h4 class="card-title">Link a bank account</h4>
                         </div>
                         <div class="card-body">
-                            <form id="addBankForm">
+                            <form id="addBankForm" autocomplete="off">
+                                @csrf
+                                <input type="hidden" name="type" value="bank">
                                 <div class="form-row">
                                     <div class="mb-3 col-xl-12">
-                                        <label class="mr-sm-2">Account number </label>
+                                        <label class="mr-sm-2">Bank name</label>
+                                        <input name="bank_name" type="text" class="form-control"
+                                               placeholder="City Bank" required>
+                                    </div>
+                                    <div class="mb-3 col-xl-12">
+                                        <label class="mr-sm-2">Account number</label>
                                         <input name="account_number" type="text" class="form-control"
                                                placeholder="36475" required>
                                     </div>
                                     <div class="mb-3 col-xl-12">
-                                        <label class="mr-sm-2">Full name </label>
+                                        <label class="mr-sm-2">Full name</label>
                                         <input name="full_name" type="text" class="form-control" placeholder="John Doe"
                                                required>
-                                    </div>
-                                    <div class="mb-3 col-xl-12">
-                                        <img src="{{ asset('assets') }}/images/routing.png" alt="" class="img-fluid">
                                     </div>
                                     <div class="col-12 mt-5">
                                         <div class="row">

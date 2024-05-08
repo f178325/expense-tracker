@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Wallet;
 use Illuminate\Http\Request;
 
 class WalletController extends Controller
@@ -27,7 +28,20 @@ class WalletController extends Controller
      */
     public function store(Request $request)
     {
-        dd($request->all());
+        $data = [
+            'user_id' => auth()->id(),
+            'name' => $request['full_name'],
+            'type' => $request['type'],
+        ];
+        if ($data['type'] === 'bank') {
+            $data['bank_name'] = $request['bank_name'];
+            $data['number'] = $request['account_number'];
+        }
+        Wallet::query()->create($data);
+        return response()->json([
+            'success' => true,
+            'message' => 'Wallet created successfully'
+        ]);
     }
 
     /**
